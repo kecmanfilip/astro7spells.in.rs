@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Clean URLs for key pages
+RewriteRule ^besplatna-natalna-karta$ kalkulator.html [L]
+RewriteRule ^tumacenje$ cenovnik.html [L]
+RewriteRule ^cenovnik$ cenovnik.html [L]
+RewriteRule ^kalkulator$ kalkulator.html [L]
+
+# VS pages (if converted to HTML later)
+RewriteRule ^vs/astro7spells-vs-flow-with-tereza$ vs-astro7spells-vs-flow-with-tereza.html [L]
+RewriteRule ^vs/astro7spells-vs-astroshop$ vs-astro7spells-vs-astroshop.html [L]
+RewriteRule ^vs/astropedija-vs-astrobejb$ vs-astropedija-vs-astrobejb.html [L]
+RewriteRule ^vs/automatska-vs-licna-natalna-karta$ vs-automatska-vs-licna-natalna-karta.html [L]
+RewriteRule ^alternatives$ alternatives-index.html [L]
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.astro7spells\.in\.rs$ [NC]
+RewriteRule ^(.*)$ https://astro7spell.in.rs/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]

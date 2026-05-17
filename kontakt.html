@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Astro7Spells</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#dc2626">
+  <meta name="description" content="Kontaktiraj Astro7Spells telefonom ili formom. Zakaži tumačenje natalne karte.">
+  <link rel="canonical" href="https://astro7spell.in.rs/kontakt.html">
+  <meta property="og:url" content="https://astro7spell.in.rs/kontakt.html">
+  <meta property="og:title" content="Kontakt | Astro7Spells">
+  <meta property="og:description" content="Zakaži tumačenje natalne karte. Odgovaramo u roku od 24 sata.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: box-shadow 0.2s;
+    }
+    .contact-card:hover {
+      box-shadow: 0 8px 24px rgba(124,58,237,0.08);
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .contact-card h4 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+    .contact-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .contact-form-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+    }
+    .contact-form-wrap h2 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+    }
+    .contact-form-wrap > p {
+      margin: 0 0 28px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .form-success {
+      display: none;
+      background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+      border: 1px solid #34d399;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      color: #065f46;
+    }
+    .form-success.visible { display: block; }
+    .form-error {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #f87171;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      color: #991b1b;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+    .form-error.visible { display: block; }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 800px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Astro7Spells</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="kalkulator.html">Kalkulator</a></li>
+        <li><a href="cenovnik.html">Cenovnik</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a href="kontakt.html" class="nav-cta">Zakaži tumačenje</a>
+    </div>
+  </nav>
+
+  <main>
+    <nav aria-label="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Početna</a></li>
+          <li aria-current="page">Kontakt</li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="hero" style="padding: 40px 0 20px;">
+      <div class="container">
+        <h1>Zakaži Tumačenje</h1>
+        <p style="color: var(--text-muted);">Popuni formu ispod i mi ćemo ti se javiti u roku od 24 sata sa predlogom termina.</p>
+      </div>
+    </section>
+
+    <section style="padding-top: 0; padding-bottom: 80px;">
+      <div class="container contact-layout">
+
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Telefon / Viber / WhatsApp</h4>
+              <p><a href="tel:+381692510747" style="color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1.1rem;">069 251 07 47</a></p>
+              <p style="font-size: 0.8rem; margin-top: 4px;">Pozivi i poruke su dobrodošli</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">⏱️</div>
+            <div>
+              <h4>Vreme odgovora</h4>
+              <p>Do 24 sata na poruke i upite<br>Radnim danima obično i brže</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Lokacija</h4>
+              <p>Online usluga - Srbija<br>Tumačenje se vrši telefonskim pozivom</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2>Pošalji upit</h2>
+          <p>Reci nam šta te zanima - odaberi paket, postavi pitanje, ili samo zakaži termin.</p>
+
+          <div class="form-success" id="formSuccess">
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">✅</div>
+            <strong style="font-size: 1.1rem; display: block; margin-bottom: 8px;">Poruka je poslata!</strong>
+            <p style="margin: 0; color: #065f46; font-size: 0.95rem;">Javićemo ti se u roku od 24 sata. Ako žuriš, slobodno nas nazovi na <strong>069 251 07 47</strong>.</p>
+          </div>
+          <div class="form-error" id="formError">
+            Došlo je do greške. Pokušaj ponovo ili nas nazovi direktno na <strong>069 251 07 47</strong>.
+          </div>
+
+          <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="77b59151-c5c4-4b22-b4b0-2dc615781d6b">
+            <input type="hidden" name="subject" value="Nova poruka sa Astro7Spells">
+            <input type="hidden" name="from_name" value="Astro7Spells Kontakt">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="name">Ime i prezime *</label>
+                <input type="text" id="name" name="name" required placeholder="npr. Ana Petrović">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="npr. ana@email.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefon (opciono)</label>
+              <input type="tel" id="phone" name="phone" placeholder="npr. 069 251 07 47">
+            </div>
+
+            <div class="form-group">
+              <label for="paket">Zanima me paket *</label>
+              <select id="paket" name="paket" required>
+                <option value="" disabled selected>Izaberi paket...</option>
+                <option value="Uvodno tumačenje (30 min) - 3.900 RSD">Uvodno tumačenje (30 min) - 3.900 RSD</option>
+                <option value="Kompletna karta (60 min) - 7.900 RSD">Kompletna karta (60 min) - 7.900 RSD</option>
+                <option value="Uporedni horoskop (45 min) - 5.900 RSD">Uporedni horoskop (45 min) - 5.900 RSD</option>
+                <option value="Tranziti + prognoza (30 min) - 4.500 RSD">Tranziti + prognoza (30 min) - 4.500 RSD</option>
+                <option value="Premium paket (3 poziva) - 15.900 RSD">Premium paket (3 poziva) - 15.900 RSD</option>
+                <option value="Nisam siguran / Imam pitanje">Nisam siguran / Imam pitanje</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="datum">Preferirani datum (opciono)</label>
+              <input type="date" id="datum" name="datum">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Poruka *</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Reci nam nešto o sebi - datum, vreme i mesto rođenja, ili bilo koje pitanje koje imaš..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%; justify-content: center;">
+              📩 Pošalji upit
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; text-align: left;">
+      <div>
+        <p style="font-weight: 600; margin-bottom: 8px;">Astro7Spells</p>
+        <p style="font-size: 0.85rem;">Besplatna natalna karta sa tumačenjem na srpskom.</p>
+      </div>
+      <div>
+        <p style="font-weight: 600; margin-bottom: 8px;">Usluge</p>
+        <ul style="list-style: none; font-size: 0.85rem; line-height: 2;">
+          <li><a href="kalkulator.html" style="color: var(--text-muted); text-decoration: none;">Besplatna karta</a></li>
+          <li><a href="cenovnik.html" style="color: var(--text-muted); text-decoration: none;">Cenovnik</a></li>
+          <li><a href="kontakt.html" style="color: var(--text-muted); text-decoration: none;">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight: 600; margin-bottom: 8px;">Pravno</p>
+        <ul style="list-style: none; font-size: 0.85rem; line-height: 2;">
+          <li><a href="privacy-policy.html" style="color: var(--text-muted); text-decoration: none;">Politika privatnosti</a></li>
+          <li><a href="terms.html" style="color: var(--text-muted); text-decoration: none;">Uslovi korišćenja</a></li>
+          <li><a href="impressum.html" style="color: var(--text-muted); text-decoration: none;">Impressum</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="text-align: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);">
+      <p style="font-size: 0.8rem;">© 2026 Astro7Spells. Sva prava zadržana.</p>
+    </div>
+  </footer>
+
+  <script src="js/cookie-consent.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const preselect = params.get('paket');
+    if (preselect) {
+      const select = document.getElementById('paket');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(preselect.replace(/\+/g, ' '))) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const error = document.getElementById('formError');
+    const btn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Šaljem...';
+      error.classList.remove('visible');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const data = await response.json();
+        if (data.success) {
+          form.style.display = 'none';
+          success.classList.add('visible');
+        } else {
+          throw new Error(data.message);
+        }
+      } catch (err) {
+        error.classList.add('visible');
+        btn.disabled = false;
+        btn.textContent = '📩 Pošalji upit';
+      }
+    });
+  </script>
+</body>
+</html>

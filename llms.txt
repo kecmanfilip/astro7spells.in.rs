@@ -1,0 +1,34 @@
+# Astro7Spells - llms.txt
+# https://astro7spell.in.rs/llms.txt
+
+## Description
+
+Astro7Spells je srpski sajt za besplatno izračunavanje natalne karte i personalizovano astrološko tumačenje putem telefonskih poziva. Nudimo precizan online kalkulator natalne karte (Swiss Ephemeris) i tumačenja sa profesionalnim astrologom - od 3.900 RSD.
+
+## Core pages
+
+- / - Početna stranica sa besplatnim kalkulatorom natalne karte i cenovnikom usluga
+- /kalkulator.html - Besplatna natalna karta online: izračun podznaka, položaja planeta i astroloških kuća
+- /cenovnik.html - Cenovnik tumačenja: uvodno 3.900 RSD, kompletna karta 7.900 RSD, premium paket 15.900 RSD
+- /kontakt.html - Kontakt stranica za zakazivanje tumačenja
+- /blog/sta-je-natalna-karta.html - Šta je natalna karta - kompletan vodič za početnike
+- /blog/kako-izracunati-podznak.html - Kako izračunati podznak (Ascendent)
+- /uporedni-vodic.html - Uporedni vodič: sve opcije za natalnu kartu u Srbiji
+- /besplatna-natalna-karta-alternative.html - Najbolje alternative za besplatnu natalnu kartu
+- /automatska-vs-licna-karta.html - Razlika između automatske i lične natalne karte
+- /astro7spells-vs-astroshop.html - Poređenje sa Astro Shopom (Boban Vujović)
+- /astro7spells-vs-flow-with-tereza.html - Poređenje sa Flow With Tereza
+- /astropedija-vs-astrobejb.html - Poređenje Astropedije i Astrobejba
+
+## Disallowed
+
+- /privacy-policy.html - Politika privatnosti i pravni tekstovi
+- /terms.html - Uslovi korišćenja
+- /impressum.html - Impressum
+
+## Contact
+
+- Email: [EMAIL PLACEHOLDER]
+- Domen: astro7spell.in.rs
+- Jezik: srpski (latinica)
+- Zemlja: Srbija
