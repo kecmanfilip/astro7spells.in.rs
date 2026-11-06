@@ -10,7 +10,8 @@
 (function () {
   'use strict';
 
-  var GA_MEASUREMENT_ID = ''; // npr. 'G-ABC123XYZ9'
+  var GTM_ID = 'GTM-PC6VM8BH';  // Google Tag Manager kontejner (GA4 tag se podešava u GTM-u)
+  var GA_MEASUREMENT_ID = '';   // alternativa bez GTM-a: direktan GA4 tag, npr. 'G-ABC123XYZ9'
 
   var loaded = false;
   var queue = [];
@@ -27,14 +28,24 @@
     ad_personalization: 'denied'
   });
 
+  function useGtm() { return /^GTM-[A-Z0-9]+$/.test(GTM_ID); }
+
   function enabled() {
-    return /^G-[A-Z0-9]{6,}$/.test(GA_MEASUREMENT_ID);
+    return useGtm() || /^G-[A-Z0-9]{6,}$/.test(GA_MEASUREMENT_ID);
   }
 
   function load() {
     if (loaded || !enabled()) return;
     loaded = true;
     gtag('consent', 'update', { analytics_storage: 'granted' });
+    if (useGtm()) {
+      window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var g = document.createElement('script');
+      g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
+      document.head.appendChild(g);
+      return;
+    }
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
@@ -54,6 +65,12 @@
   window.a7track = function (name, params) {
     if (!enabled()) return;
     if (!loaded) return;
+    if (useGtm()) {
+      var d = { event: name };
+      for (var k in (params || {})) d[k] = params[k];
+      window.dataLayer.push(d);
+      return;
+    }
     gtag('event', name, params || {});
   };
 
