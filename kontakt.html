@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt | Astro7Spells</title>
+  <title>Zakaži Tumačenje Natalne Karte Telefonom | Astro7Spells</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#dc2626">
-  <meta name="description" content="Kontaktiraj Astro7Spells telefonom ili formom. Zakaži tumačenje natalne karte.">
+  <meta name="description" content="Zakaži telefonsko tumačenje natalne karte. Pošalji podatke o rođenju, javljamo se u roku od 24 sata sa predlogom termina.">
   <link rel="canonical" href="https://astro7spell.in.rs/kontakt.html">
   <meta property="og:url" content="https://astro7spell.in.rs/kontakt.html">
-  <meta property="og:title" content="Kontakt | Astro7Spells">
-  <meta property="og:description" content="Zakaži tumačenje natalne karte. Odgovaramo u roku od 24 sata.">
+  <meta property="og:title" content="Zakaži Tumačenje Natalne Karte Telefonom | Astro7Spells">
+  <meta property="og:description" content="Zakaži telefonsko tumačenje natalne karte. Pošalji podatke o rođenju, javljamo se u roku od 24 sata sa predlogom termina.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -252,6 +252,7 @@
         <p style="font-weight: 600; margin-bottom: 8px;">Usluge</p>
         <ul style="list-style: none; font-size: 0.85rem; line-height: 2;">
           <li><a href="kalkulator.html" style="color: var(--text-muted); text-decoration: none;">Besplatna karta</a></li>
+          <li><a href="tumacenje-natalne-karte.html" style="color: var(--text-muted); text-decoration: none;">Tumačenje telefonom</a></li>
           <li><a href="cenovnik.html" style="color: var(--text-muted); text-decoration: none;">Cenovnik</a></li>
           <li><a href="kontakt.html" style="color: var(--text-muted); text-decoration: none;">Kontakt</a></li>
         </ul>
@@ -270,7 +271,8 @@
     </div>
   </footer>
 
-  <script src="js/cookie-consent.js"></script>
+  <script src="/js/analytics.js"></script>
+  <script src="/js/cookie-consent.js"></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const preselect = params.get('paket');
@@ -283,6 +285,19 @@
         }
       }
     }
+
+    // Popuni podatke o rođenju iz kalkulatora (ako ih je posetilac tamo uneo)
+    try {
+      const b = JSON.parse(sessionStorage.getItem('a7_birth') || 'null');
+      if (b && params.get('iz') === 'kalkulator') {
+        if (b.name) document.getElementById('name').value = b.name;
+        const lines = [];
+        if (b.date && b.date !== '..') lines.push('Datum rođenja: ' + b.date);
+        if (b.time && b.time !== ':') lines.push('Vreme rođenja: ' + b.time);
+        if (b.city) lines.push('Mesto rođenja: ' + b.city);
+        if (lines.length) document.getElementById('message').value = lines.join('\n') + '\n\n';
+      }
+    } catch (e) {}
 
     const form = document.getElementById('contactForm');
     const success = document.getElementById('formSuccess');
@@ -304,6 +319,7 @@
         if (data.success) {
           form.style.display = 'none';
           success.classList.add('visible');
+          if (window.a7track) window.a7track('generate_lead', { package: (document.getElementById('paket') || {}).value || '' });
         } else {
           throw new Error(data.message);
         }

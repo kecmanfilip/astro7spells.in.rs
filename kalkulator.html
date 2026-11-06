@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Besplatna Natalna Karta Online | Kalkulator Podznaka i Planeta - Astro7Spells</title>
+  <title>Besplatna Natalna Karta Online – Kalkulator na Srpskom</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#dc2626">
-  <meta name="description" content="Najprecizniji besplatni kalkulator natalne karte. Izračunaj podznak, Sunce, Mesec, planete i 12 astroloških kuća. Swiss Ephemeris tačnost. Bez registracije.">
+  <meta name="description" content="Besplatan kalkulator natalne karte: podznak, planete i 12 kuća. Swiss Ephemeris tačnost, bez registracije. Rezultat za 10 sekundi.">
   <meta name="keywords" content="besplatna natalna karta, kalkulator natalne karte, računanje podznaka, online natalna karta, podznak kalkulator, natalna karta srbija">
   <link rel="canonical" href="https://astro7spell.in.rs/kalkulator.html">
   <meta property="og:url" content="https://astro7spell.in.rs/kalkulator.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Astro7Spells">
-  <meta property="og:title" content="Besplatna Natalna Karta Online | Kalkulator Podznaka i Planeta - Astro7Spells">
-  <meta property="og:description" content="Najprecizniji besplatni kalkulator natalne karte. Izračunaj podznak, Sunce, Mesec, planete i 12 astroloških kuća.">
+  <meta property="og:title" content="Besplatna Natalna Karta Online – Kalkulator na Srpskom">
+  <meta property="og:description" content="Besplatan kalkulator natalne karte: podznak, planete i 12 kuća. Swiss Ephemeris tačnost, bez registracije. Rezultat za 10 sekundi.">
   <meta property="og:locale" content="sr_RS">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -238,6 +238,15 @@
             </div>
           </div>
 
+                    <div class="cta-box" id="top-cta" style="margin:24px 0;">
+            <h2>Šta tvoja karta zaista znači?</h2>
+            <p>Dobio si podatke. Astrolog sa 30 godina iskustva može da ti objasni šta oni znače za tvoj život, u razgovoru telefonom od 3.900 RSD.</p>
+            <div class="hero-btns" style="margin-top:8px;">
+              <a href="kontakt.html?paket=Uvodno+tumačenje+(30+min)&amp;iz=kalkulator" class="btn btn-primary" id="book-from-calc">Zakaži tumačenje ove karte</a>
+              <a href="cenovnik.html" class="btn btn-secondary">Pogledaj cene</a>
+            </div>
+          </div>
+
           <div class="result-section">
             <h3>📊 Vizuelna natalna karta</h3>
             <div id="chart-visual" style="margin: 16px 0;"></div>
@@ -312,6 +321,7 @@
         <p style="font-weight: 600; margin-bottom: 8px;">Usluge</p>
         <ul style="list-style: none; font-size: 0.85rem; line-height: 2;">
           <li><a href="kalkulator.html" style="color: var(--text-muted); text-decoration: none;">Besplatna karta</a></li>
+          <li><a href="tumacenje-natalne-karte.html" style="color: var(--text-muted); text-decoration: none;">Tumačenje telefonom</a></li>
           <li><a href="cenovnik.html" style="color: var(--text-muted); text-decoration: none;">Cenovnik</a></li>
           <li><a href="kontakt.html" style="color: var(--text-muted); text-decoration: none;">Kontakt</a></li>
         </ul>
@@ -399,6 +409,26 @@
   <script src="js/chart-adapter.js"></script>
   <script type="module" src="js/horoscope.js"></script>
 
-  <script src="js/cookie-consent.js"></script>
+    <script>
+    // Pri kliku na "Zakaži" sačuvaj podatke o rođenju lokalno (sessionStorage), samo u ovom browseru,
+    // da se forma na kontakt stranici popuni bez ponovnog kucanja. Ništa se ne šalje na server.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="kontakt.html"]');
+      if (!a) return;
+      try {
+        function v(id){var x=document.getElementById(id);return x?x.value:'';}
+        var city=document.getElementById('city');
+        var txt=city&&city.selectedOptions&&city.selectedOptions[0]?city.selectedOptions[0].text:'';
+        sessionStorage.setItem('a7_birth', JSON.stringify({
+          name: v('name'),
+          date: v('birth-day')+'.'+v('birth-month')+'.'+v('birth-year')+'.',
+          time: v('birth-hour')+':'+v('birth-minute'),
+          city: txt
+        }));
+      } catch (err) {}
+    });
+  </script>
+  <script src="/js/analytics.js"></script>
+  <script src="/js/cookie-consent.js"></script>
 </body>
 </html>

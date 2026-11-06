@@ -4,8 +4,11 @@
 
   const COOKIE_KEY = 'astro7spells_cookie_consent';
 
-  // Check if consent already given
+  // Ako je pristanak već dat, samo aktiviraj analitiku (ako je dozvoljena)
+  var stored = null;
+  try { stored = JSON.parse(localStorage.getItem(COOKIE_KEY) || 'null'); } catch (e) {}
   if (localStorage.getItem(COOKIE_KEY)) {
+    if (stored && stored.analytics && window.a7ConsentGranted) window.a7ConsentGranted();
     return;
   }
 
@@ -86,6 +89,7 @@
   // Handlers
   document.getElementById('cookie-accept').addEventListener('click', function() {
     localStorage.setItem(COOKIE_KEY, JSON.stringify({ essential: true, analytics: true, timestamp: Date.now() }));
+    if (window.a7ConsentGranted) window.a7ConsentGranted();
     banner.remove();
     style.remove();
   });
