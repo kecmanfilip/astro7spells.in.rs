@@ -10,7 +10,7 @@ Astro7Spells je srpski sajt za besplatno izračunavanje natalne karte i personal
 - / - Početna stranica sa besplatnim kalkulatorom natalne karte i cenovnikom usluga
 - /kalkulator.html - Besplatna natalna karta online: izračun podznaka, položaja planeta i astroloških kuća
 - /tumacenje-natalne-karte.html - Tumačenje natalne karte telefonom na srpskom, od 1.950 RSD, astrolog sa 30 godina iskustva
-- /cenovnik.html - Cenovnik tumačenja: uvodno 1.950 RSD, kompletna karta 3.950 RSD, premium paket 12.950 RSD
+- /cenovnik.html - Cenovnik tumačenja: uvodno 1.950 RSD, kompletna karta 3.950 RSD, premium paket 7.950 RSD
 - /kontakt.html - Kontakt stranica za zakazivanje tumačenja
 - /blog/sta-je-natalna-karta.html - Šta je natalna karta - kompletan vodič za početnike
 - /blog/kako-izracunati-podznak.html - Kako izračunati podznak (Ascendent)
