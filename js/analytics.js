@@ -10,7 +10,7 @@
 (function () {
   'use strict';
 
-  var GTM_ID = 'GTM-PC6VM8BH';  // Google Tag Manager kontejner (GA4 tag se podešava u GTM-u)
+  var GTM_ID = 'GTM-K8GV7X43';  // Google Tag Manager kontejner (GA4 tag se podešava u GTM-u)
   var GA_MEASUREMENT_ID = '';   // alternativa bez GTM-a: direktan GA4 tag, npr. 'G-ABC123XYZ9'
 
   var loaded = false;
