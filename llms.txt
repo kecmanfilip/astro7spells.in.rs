@@ -3,14 +3,14 @@
 
 ## Description
 
-Astro7Spells je srpski sajt za besplatno izračunavanje natalne karte i personalizovano astrološko tumačenje putem telefonskih poziva. Nudimo precizan online kalkulator natalne karte (Swiss Ephemeris) i tumačenja sa profesionalnim astrologom - od 3.900 RSD.
+Astro7Spells je srpski sajt za besplatno izračunavanje natalne karte i personalizovano astrološko tumačenje putem telefonskih poziva. Nudimo precizan online kalkulator natalne karte (Swiss Ephemeris) i tumačenja sa profesionalnim astrologom - od 1.950 RSD.
 
 ## Core pages
 
 - / - Početna stranica sa besplatnim kalkulatorom natalne karte i cenovnikom usluga
 - /kalkulator.html - Besplatna natalna karta online: izračun podznaka, položaja planeta i astroloških kuća
-- /tumacenje-natalne-karte.html - Tumačenje natalne karte telefonom na srpskom, od 3.900 RSD, astrolog sa 30 godina iskustva
-- /cenovnik.html - Cenovnik tumačenja: uvodno 3.900 RSD, kompletna karta 7.900 RSD, premium paket 15.900 RSD
+- /tumacenje-natalne-karte.html - Tumačenje natalne karte telefonom na srpskom, od 1.950 RSD, astrolog sa 30 godina iskustva
+- /cenovnik.html - Cenovnik tumačenja: uvodno 1.950 RSD, kompletna karta 3.950 RSD, premium paket 12.950 RSD
 - /kontakt.html - Kontakt stranica za zakazivanje tumačenja
 - /blog/sta-je-natalna-karta.html - Šta je natalna karta - kompletan vodič za početnike
 - /blog/kako-izracunati-podznak.html - Kako izračunati podznak (Ascendent)
@@ -25,11 +25,9 @@ Astro7Spells je srpski sajt za besplatno izračunavanje natalne karte i personal
 
 - /privacy-policy.html - Politika privatnosti i pravni tekstovi
 - /terms.html - Uslovi korišćenja
-- /impressum.html - Impressum
 
 ## Contact
 
-- Email: [EMAIL PLACEHOLDER]
 - Domen: astro7spell.in.rs
 - Jezik: srpski (latinica)
 - Zemlja: Srbija
